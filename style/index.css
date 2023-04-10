@@ -152,6 +152,12 @@ p {
   border: solid 2px #364f6b;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.kartu-kursus a {
+  text-decoration: none;
 }
 
 .kartu-kursus .class-kursus {
@@ -161,6 +167,10 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.kartu-kursus .class-kursus:hover {
+  background-color: #013c949a;
 }
 
 .class-kursus h1 {
