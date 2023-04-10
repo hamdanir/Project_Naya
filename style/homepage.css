@@ -1,76 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
-
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background: aliceblue;
+    border: 1px solid black;
+    padding: 14px 20px;
 }
 
-body {
-    width: 100%;
+.right-bar {
+    position: relative;
+}
+
+.right-bar .shopping-cart-container {
+    width: 285px;
+    height: 400px;
+    background: aliceblue;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    border: 1px solid black;
+    padding: 25px 15px;
+}
+
+.shopping-cart-container .book {
+    display: flex;
+}
+
+.shopping-cart-container .book .img {
+    width: 64px;
+    height: 77.24px;
+}
+
+.shopping-cart-container .right {
+    padding-left: 24px;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.books-cat {
+    min-height: 90vh;
+    margin: 65px;
+    background:aliceblue;
+    border: 1px solid black;
+}
+
+.books-cat .title {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.books-cat .books {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.book {
+    margin-top: 50px;
+}
+
+.book .img {
+    width: 145px;
+    height: 175px;
+    border: 1px solid black;
+}
+
+.book .img img {
+    width:100%;
+    height: 100%;
+}
+
+.add-to-cart input {
+    width: 30%;
+    box-sizing: border-box;
+
+}
+
+footer {
+    background: aliceblue;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    background-color: #adacac;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.header_fixed {
-    max-height: 100vh;
-    width: 100%;
-    overflow: auto;
-    border: 1px solid #dddddd;
-}
-
-.header_fixed thead th {
-    position: sticky;
-    top: 0;
-    background-color: black;
-    color: #e6e7e8;
-    font-size: 15px;
-}
-
-th,
-td {
-    border-bottom: 1px solid #dddddd;
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-tr:nth-child(odd) {
-    background-color: #edeef1;
-}
-
-tr:hover td {
-    color: #44b478;
-    cursor: pointer;
-    background-color: #ffffff;
-}
-
-td button {
-    border: none;
-    padding: 7px 20px;
-    border-radius: 20px;
-    background-color: black;
-    color: #e6e7e8;
-}
-
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    align-items: center;
 }
