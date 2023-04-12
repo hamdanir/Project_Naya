@@ -14,12 +14,12 @@ function printBuku(data) {
     data.forEach((element) => {
         html = html + `
         <div class="book">
-            <div class="img"><img src="https://wpvip.edutopia.org/wp-content/uploads/2022/10/iStock-996990478.jpg?w=1300&quality=85"></div>
+            <div class="img"><img src=""></div>
             <div class="author">${element.name}</div>
             <div class="title">${element.level}</div>
             <div class="price">${element.instructor}</div>
             <div class="add-to-cart">
-            <button id="checkout">Join</button>
+            <button id="checkout">Add To Cart</button>
             </div>
         </div>
     `

@@ -1,4 +1,6 @@
 const form = document.getElementById('login-form');
+const token = window.localStorage.token;
+
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -11,10 +13,11 @@ form.addEventListener('submit', async (event) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
-    });
-
+    })
+    .then(res => res.json());
     if (success = "true") {
-        window.location.href = '../pages/succes.html';
+        window.localStorage.setItem('token', response.data)
+        window.location.href = '../pages/homepage.html';
         // target halaman
     } else {
         alert('Invalid email or password');

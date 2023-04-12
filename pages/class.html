@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tabel Data</title>
+    <link rel="stylesheet" type="text/css" href="../style/class.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tabel Data</h1>
+      <button id="btn-add">Tambah</button>
+      <table id="table-data">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Level</th>
+            <th>instructor</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <div class="popup" id="popup-add">
+      <form id="form-add">
+        <label for="input-nama">Nama:</label>
+        <input type="text" id="input-nama" name="nama" required />
+
+        <label for="input-level">Level:</label>
+        <input type="text" id="input-level" name="level" required />
+
+        <label for="input-instructor">instructor:</label>
+        <input type="text" id="input-instructor" name="instructor" required />
+
+        <button type="submit" id="btn-save">Simpan</button>
+        <button type="button" id="btn-cancel">Batal</button>
+      </form>
+    </div>
+    <div class="popup" id="popup-edit">
+      <form id="form-edit">
+        <label for="input-edit-nama">Nama:</label>
+        <input type="text" id="input-edit-nama" name="nama" required />
+
+        <label for="input-edit-level">Level:</label>
+        <input type="text" id="input-edit-level" name="level" required />
+
+        <label for="input-edit-instructor">instructor:</label>
+        <input
+          type="text"
+          id="input-edit-instructor"
+          name="instructor"
+          required
+        />
+
+        <input type="hidden" id="input-edit-id" name="id" />
+
+        <button type="submit" id="btn-update">Simpan</button>
+        <button type="button" id="btn-cancel-edit">Batal</button>
+      </form>
+    </div>
+    <script src="../js/class.js"></script>
+  </body>
+</html>

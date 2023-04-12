@@ -14,8 +14,6 @@ function getMyClasses(){
         updateTable();
         
     })
-
-    
 }
 
 getMyClasses();
