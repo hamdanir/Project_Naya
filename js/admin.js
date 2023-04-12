@@ -1,3 +1,4 @@
+
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
@@ -21,10 +22,10 @@ function menuBtnChange() {
     }
 }
 
-function tampilkanClass() {
-    fetch('../pages/tabelKelas.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('text').innerHTML = data;
-        });
-}
+// function tampilkanClass() {
+//     fetch('../pages/tabelKelas.html')
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById('text').innerHTML = data;
+//         });
+// }
