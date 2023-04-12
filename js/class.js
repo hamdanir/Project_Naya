@@ -92,9 +92,19 @@ function addEventDeleteButton() {
 }
 
 function deleteData(id) {
-    fetch(`https://simple-rest-api-production-6482.up.railway.app/class/${id}`), {
-        method: 'DELETE'
-    }
+    fetch(`https://simple-rest-api-production-6482.up.railway.app/class/${id}`, {
+        method: 'DEL',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Berhasil menghapus');
+            } else {
+                alert('Gagal menghapus data');
+            }
+        })
+        .catch(error => console.error(error));
 
 }
 
@@ -124,7 +134,7 @@ function hidePopupEdit() {
 // Fungsi untuk menambah data ke dalam API public
 function addData() {
     const data = {
-        nama: inputNama.value,
+        name: inputNama.value,
         level: inputLevel.value,
         instructor: inputinstructor.value
     };

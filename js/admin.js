@@ -22,10 +22,10 @@ function menuBtnChange() {
     }
 }
 
-// function tampilkanClass() {
-//     fetch('../pages/tabelKelas.html')
-//         .then(response => response.text())
-//         .then(data => {
-//             document.getElementById('text').innerHTML = data;
-//         });
-// }
+function tampilkanClass() {
+    fetch('../pages/class.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('text').innerHTML = data;
+        });
+}
