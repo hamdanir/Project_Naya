@@ -18,11 +18,12 @@ const popupEdit = document.getElementById('popup-edit');
 
 // Fungsi untuk menampilkan data ke dalam tabel
 function showData() {
-    fetch('https://simple-rest-api-production-6482.up.railway.app/class')
+    fetch('http://127.0.0.1:8080/class')
         .then(response => response.json())
         .then(data => {
             console.log(data);
             tableBody.innerHTML = '';
+            let number = 1
             data.data.forEach(item => {
                 const tr = document.createElement('tr');
                 const tdId = document.createElement('td');
@@ -33,7 +34,6 @@ function showData() {
                 const btnEdit = document.createElement('button');
                 const btnHapus = document.createElement('button');
 
-                let number = 1;
                 tdId.innerText = number++;
                 tdNama.innerText = item.name;
                 tdLevel.innerText = item.level;
@@ -42,12 +42,12 @@ function showData() {
                 btnEdit.innerText = 'Edit';
                 btnEdit.addEventListener('click', () => {
                     showPopupEdit(item.id, item.name, item.level, item.instructor);
-                });
+                });                
 
                 btnHapus.innerText = 'Hapus';
                 btnHapus.addEventListener('click', () => {
-                    deleteData(item.ID);
-                });
+                    deleteData(item.id);
+                });                
 
                 tdAction.appendChild(btnEdit);
                 tdAction.appendChild(btnHapus);
@@ -92,21 +92,20 @@ function addEventDeleteButton() {
 }
 
 function deleteData(id) {
-    fetch(`https://simple-rest-api-production-6482.up.railway.app/class/${id}`, {
-        method: 'DEL',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+    fetch(`http://127.0.0.1:8080/class/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
     })
-        .then(response => {
-            if (response.ok) {
-                alert('Berhasil menghapus');
-            } else {
-                alert('Gagal menghapus data');
-            }
-        })
-        .catch(error => console.error(error));
-
-}
+      .then(response => {
+        if (response.ok) {
+          alert('Berhasil menghapus');
+          showData();
+        } else {
+          alert('Gagal menghapus data');
+        }
+      })
+      .catch(error => console.error(error));
+  }
 
 // Fungsi untuk mereset form tambah data
 function resetFormAdd() {
@@ -126,6 +125,15 @@ function hidePopupAdd() {
     resetFormAdd();
 }
 
+// Fungsi untuk menampilkan popup edit data
+function showPopupEdit(id, name, level, instructor) {
+    popupEdit.style.display = 'block';
+    inputEditId.value = id;
+    inputEditNama.value = name;
+    inputEditLevel.value = level;
+    inputEditInstructor.value = instructor;
+  }
+
 // Fungsi untuk menyembunyikan popup edit data
 function hidePopupEdit() {
     popupEdit.style.display = 'none';
@@ -136,9 +144,9 @@ function addData() {
     const data = {
         name: inputNama.value,
         level: inputLevel.value,
-        instructor: inputinstructor.value
+        instructor: inputInstructor.value
     };
-    fetch('https://simple-rest-api-production-6482.up.railway.app/class', {
+    fetch('http://127.0.0.1:8080/class', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -162,7 +170,7 @@ function updateData() {
         instructor: inputEditinstructor.value
     };
     const id = inputEditId.value;
-    fetch('https://simple-rest-api-production-6482.up.railway.app/class/${id}', {
+    fetch('http://127.0.0.1:8080/class/${id}', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -173,6 +181,23 @@ function updateData() {
                 showData();
             } else {
                 alert('Gagal mengupdate data');
+            }
+        })
+        .catch(error => console.error(error));
+}
+
+// Fungsi untuk menghapus data di dalam API public
+function deleteData(id) {
+    fetch(`http://127.0.0.1:8080/class/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Berhasil menghapus');
+                showData(); // Refresh the data after deletion
+            } else {
+                alert('Gagal menghapus data');
             }
         })
         .catch(error => console.error(error));

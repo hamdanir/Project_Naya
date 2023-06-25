@@ -1,5 +1,5 @@
 // Mengambil data dari API menggunakan fetch()
-fetch("https://simple-rest-api-production-6482.up.railway.app/class")
+fetch("http://127.0.0.1:8080/class")
     .then((response) => response.json())
     .then((data) => {
         console.log(data.data);

@@ -1,7 +1,7 @@
 const checkoutBtn = document.getElementById('checkout')
 const token = localStorage.getItem('token');
 checkoutBtn.addEventListener('click', function() {
-    fetch('https://simple-rest-api-production-6482.up.railway.app/enroll/', {
+    fetch('http://127.0.0.1:8080/enroll/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
