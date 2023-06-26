@@ -9,7 +9,7 @@ menu.onclick = function () {
     menu.classList.toggle('active');
 }
 
-let url = 'https://simple-rest-api-production-6482.up.railway.app/class';
+let url = 'http://127.0.0.1:8080/class';
 let classList = document.getElementById("kursus-list");
 
 

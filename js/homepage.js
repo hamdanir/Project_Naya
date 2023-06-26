@@ -1,4 +1,4 @@
-fetch('https://simple-rest-api-production-6482.up.railway.app/class')
+fetch('http://127.0.0.1:8080/class')
 .then(function (response) {
     if (response.status === 200) {
         return response.json()

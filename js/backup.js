@@ -19,7 +19,7 @@ table.appendChild(tableBody);
 
 // ambil data dari API publik
 function getData() {
-    fetch("https://simple-rest-api-production-6482.up.railway.app/class")
+    fetch("http://127.0.0.1:8080/class")
         .then(response => response.json())
         .then(data => {
             displayData(data);
@@ -126,7 +126,7 @@ function saveData(id, nama, alamat, email) {
         email: email
     };
 
-    fetch("https://simple-rest-api-production-6482.up.railway.app/class/${id}", {
+    fetch("http://127.0.0.1:8080/class/${id}", {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -143,7 +143,7 @@ function saveData(id, nama, alamat, email) {
 
 // hapus data dari API publik
 function deleteData(id) {
-    fetch("https://simple-rest-api-production-6482.up.railway.app/class/${id}", {
+    fetch("http://127.0.0.1:8080/class/${id}", {
         method: 'DELETE'
     })
         .then(response => response.json())

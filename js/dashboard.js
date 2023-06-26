@@ -1,6 +1,6 @@
 let tbody = document.querySelector('tbody');
 
-let url = 'https://simple-rest-api-production-6482.up.railway.app/myclass';
+let url = 'http://127.0.0.1:8080/myclass';
 
 let myClasses = [];
 
